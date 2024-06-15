@@ -38,7 +38,7 @@ const App = () => {
   };
 
   const fetchWeather = (country) => {
-    const apiKey = "01c82a472e2bc6f38db154d1b79e38e0";
+    const apiKey = import.meta.env.VITE_API_KEY;
     const capital = country.capital[0];
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${capital}&units=metric&appid=${apiKey}`;
 
