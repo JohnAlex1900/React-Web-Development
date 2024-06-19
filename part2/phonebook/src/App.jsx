@@ -54,12 +54,11 @@ const App = (props) => {
             setNewName("");
             setNewNumber("");
             setSuccess(`Updated ${newName}'s number`);
+            setTimeout(() => setSuccess(null), 5000);
           })
           .catch((error) => {
-            setError(
-              `The person '${newName}' was already deleted from the server`
-            );
-            setPersons(persons.filter((p) => p.id !== existingPerson.id));
+            setError(error.response.data.error);
+            setTimeout(() => setError(null), 5000);
           });
       }
     } else {
@@ -76,9 +75,8 @@ const App = (props) => {
           setSuccess(`Added ${personObject.name}`);
         })
         .catch((error) => {
-          // this is the way to access the error message
-          console.log(error.response.data.error);
           setError(error.response.data.error);
+          setTimeout(() => setError(null), 5000);
         });
     }
   };
