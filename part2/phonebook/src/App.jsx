@@ -73,6 +73,7 @@ const App = (props) => {
           setNewName("");
           setNewNumber("");
           setSuccess(`Added ${personObject.name}`);
+          setTimeout(() => setSuccess(null), 5000);
         })
         .catch((error) => {
           setError(error);
