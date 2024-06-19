@@ -6,7 +6,7 @@ import Success from "./components/Success";
 import "./App.css";
 
 const App = (props) => {
-  axios.get("http://localhost:3001/persons").then((response) => {
+  axios.get("http://localhost:3001/api/persons").then((response) => {
     const personsData = response.data;
     console.log(personsData);
   });
@@ -44,7 +44,7 @@ const App = (props) => {
       ) {
         // Update the existing person's number
         personService
-          .update(existingPerson.id, { ...existingPerson, number: newNumber })
+          .update(existingPerson.name, { ...existingPerson, number: newNumber })
           .then((updatedPerson) => {
             setPersons(
               persons.map((person) =>
@@ -53,6 +53,7 @@ const App = (props) => {
             );
             setNewName("");
             setNewNumber("");
+            setSuccess(`Updated ${newName}'s number`);
           })
           .catch((error) => {
             setError(
@@ -66,12 +67,19 @@ const App = (props) => {
         persons.length > 0
           ? (Math.max(...persons.map((p) => parseInt(p.id, 10))) + 1).toString()
           : "1";
-      personService.create(personObject).then((returnedPerson) => {
-        setPersons(persons.concat(returnedPerson));
-        setNewName("");
-        setNewNumber("");
-        setSuccess(`Added ${personObject.name}`);
-      });
+      personService
+        .create(personObject)
+        .then((returnedPerson) => {
+          setPersons(persons.concat(returnedPerson));
+          setNewName("");
+          setNewNumber("");
+          setSuccess(`Added ${personObject.name}`);
+        })
+        .catch((error) => {
+          // this is the way to access the error message
+          console.log(error.response.data.error);
+          setError(error.response.data.error);
+        });
     }
   };
 
