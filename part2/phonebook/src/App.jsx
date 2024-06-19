@@ -57,7 +57,7 @@ const App = (props) => {
             setTimeout(() => setSuccess(null), 5000);
           })
           .catch((error) => {
-            setError(error.response.data.error);
+            setError(error);
             setTimeout(() => setError(null), 5000);
           });
       }
@@ -75,7 +75,7 @@ const App = (props) => {
           setSuccess(`Added ${personObject.name}`);
         })
         .catch((error) => {
-          setError(error.response.data.error);
+          setError(error);
           setTimeout(() => setError(null), 5000);
         });
     }

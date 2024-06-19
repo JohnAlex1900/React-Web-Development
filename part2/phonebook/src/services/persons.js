@@ -11,7 +11,7 @@ const create = (newObject) => {
   return request
     .then((response) => response.data)
     .catch((error) => {
-      throw error;
+      throw error.response.data.error; // Forward the error message
     });
 };
 
@@ -20,7 +20,7 @@ const update = (name, newObject) => {
   return request
     .then((response) => response.data)
     .catch((error) => {
-      throw error;
+      throw error.response.data.error; // Forward the error message
     });
 };
 
