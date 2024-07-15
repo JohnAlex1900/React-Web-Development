@@ -1,0 +1,42 @@
+{
+  "name": "graphql_backend",
+  "version": "1.0.0",
+  "description": "GraphQL Setup",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohnAlex1900/GraphQL.git"
+  },
+  "author": "John Irungu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JohnAlex1900/GraphQL/issues"
+  },
+  "homepage": "https://github.com/JohnAlex1900/GraphQL#readme",
+  "dependencies": {
+    "@apollo/server": "^4.10.4",
+    "@graphql-tools/schema": "^10.0.4",
+    "apollo-server-errors": "^3.3.1",
+    "apollo-server-express": "^3.13.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "graphql": "^16.9.0",
+    "graphql-subscriptions": "^2.0.0",
+    "graphql-tools": "^9.0.1",
+    "graphql-ws": "^5.16.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.5.0",
+    "mongoose-unique-validator": "^5.0.1",
+    "uuid": "^10.0.0",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
