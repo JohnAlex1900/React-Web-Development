@@ -1,0 +1,11 @@
+[
+  { "code": "A00", "name": "Cholera", "latin": "Cholera" },
+  { "code": "A01", "name": "Typhoid and paratyphoid fevers" },
+  {
+    "code": "S62.5",
+    "name": "Fracture of other and unspecified parts of wrist and hand"
+  },
+  { "code": "Z57.1", "name": "Occupational exposure to radiation" },
+  { "code": "Z74.3", "name": "Need for continuous supervision" },
+  { "code": "M51.2", "name": "Other intervertebral disc displacement" }
+]
